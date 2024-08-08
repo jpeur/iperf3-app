@@ -34,8 +34,6 @@ struct MainView: View {
                 .onSubmit {
                     showCommand = true
                 }
-            
-            TextField
         }
         if(showCommand)
         {

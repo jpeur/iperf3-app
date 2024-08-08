@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE82C1092C64421700682CB2 /* iperf in Resources */ = {isa = PBXBuildFile; fileRef = EE82C1082C64421700682CB2 /* iperf */; };
+		EE82C10D2C64438400682CB2 /* SystemPackage in Frameworks */ = {isa = PBXBuildFile; productRef = EE82C10C2C64438400682CB2 /* SystemPackage */; };
 		EED8D5482C62F54800C2DB54 /* iperf3_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8D5472C62F54800C2DB54 /* iperf3_appApp.swift */; };
 		EED8D54A2C62F54800C2DB54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8D5492C62F54800C2DB54 /* ContentView.swift */; };
 		EED8D54C2C62F54C00C2DB54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED8D54B2C62F54C00C2DB54 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE82C1082C64421700682CB2 /* iperf */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iperf; sourceTree = "<group>"; };
+		EE82C10E2C64440200682CB2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		EED8D5442C62F54800C2DB54 /* iperf3-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iperf3-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED8D5472C62F54800C2DB54 /* iperf3_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iperf3_appApp.swift; sourceTree = "<group>"; };
 		EED8D5492C62F54800C2DB54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,12 +32,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE82C10D2C64438400682CB2 /* SystemPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE82C0862C643E5400682CB2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EE82C10A2C6442D200682CB2 /* iperfSwift */,
+				EE82C0872C643E6800682CB2 /* Ciperf */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EE82C0872C643E6800682CB2 /* Ciperf */ = {
+			isa = PBXGroup;
+			children = (
+				EE82C1082C64421700682CB2 /* iperf */,
+			);
+			path = Ciperf;
+			sourceTree = "<group>";
+		};
+		EE82C10A2C6442D200682CB2 /* iperfSwift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iperfSwift;
+			sourceTree = "<group>";
+		};
 		EED8D53B2C62F54800C2DB54 = {
 			isa = PBXGroup;
 			children = (
@@ -53,11 +82,13 @@
 		EED8D5462C62F54800C2DB54 /* iperf3-app */ = {
 			isa = PBXGroup;
 			children = (
+				EE82C0862C643E5400682CB2 /* Sources */,
 				EED8D5472C62F54800C2DB54 /* iperf3_appApp.swift */,
 				EED8D5552C62F7B300C2DB54 /* MainView.swift */,
 				EED8D5492C62F54800C2DB54 /* ContentView.swift */,
 				EED8D54B2C62F54C00C2DB54 /* Assets.xcassets */,
 				EED8D54D2C62F54C00C2DB54 /* Preview Content */,
+				EE82C10E2C64440200682CB2 /* Package.swift */,
 			);
 			path = "iperf3-app";
 			sourceTree = "<group>";
@@ -86,6 +117,9 @@
 			dependencies = (
 			);
 			name = "iperf3-app";
+			packageProductDependencies = (
+				EE82C10C2C64438400682CB2 /* SystemPackage */,
+			);
 			productName = "iperf3-app";
 			productReference = EED8D5442C62F54800C2DB54 /* iperf3-app.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +148,9 @@
 				Base,
 			);
 			mainGroup = EED8D53B2C62F54800C2DB54;
+			packageReferences = (
+				EE82C10B2C64438400682CB2 /* XCRemoteSwiftPackageReference "swift-system" */,
+			);
 			productRefGroup = EED8D5452C62F54800C2DB54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -128,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE82C1092C64421700682CB2 /* iperf in Resources */,
 				EED8D54F2C62F54C00C2DB54 /* Preview Assets.xcassets in Resources */,
 				EED8D54C2C62F54C00C2DB54 /* Assets.xcassets in Resources */,
 			);
@@ -348,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE82C10B2C64438400682CB2 /* XCRemoteSwiftPackageReference "swift-system" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-system.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE82C10C2C64438400682CB2 /* SystemPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE82C10B2C64438400682CB2 /* XCRemoteSwiftPackageReference "swift-system" */;
+			productName = SystemPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EED8D53C2C62F54800C2DB54 /* Project object */;
 }

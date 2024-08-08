@@ -11,7 +11,9 @@ import SwiftUI
 struct iperf3_appApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MainView()
+            }
         }
     }
 }
