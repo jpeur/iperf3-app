@@ -21,6 +21,10 @@ struct MainView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding([.horizontal])
+                .onChange(of: task)
+                {
+                    showCommand = false
+                }
                 
             }
         }
@@ -35,9 +39,19 @@ struct MainView: View {
                     showCommand = true
                 }
         }
+        else
+        {
+            Button("Start Server")
+            {
+                showCommand = true
+            }
+            .buttonStyle(.borderedProminent)
+            .padding()
+        }
+        
         if(showCommand)
         {
-            Text("Command: iperf3 -c " + serverIP)
+            Text("Running: iperf3  \(task == iperfTask.client ? "-c \(serverIP)": "-s")")
         }
         
         Spacer()
